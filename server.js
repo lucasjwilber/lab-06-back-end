@@ -10,6 +10,9 @@ const PORT = process.env.PORT || 3001
 
 app.get('/location', (request, response) => {
   response.send('route /location is working');
+  const city = request.query;
+  console.log(city);
+  response.send(city);
 });
 
 app.get('', (request, response) => {
