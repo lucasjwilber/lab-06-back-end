@@ -19,13 +19,28 @@ function findLatAndLong(city) {
   return locationObj;
 }
 
-function Location(name, geoData) {
-  this.search_query = name;
+function Location(city, geoData) {
+  this.search_query = city;
   this.formatted_query = geoData.results[0].formatted_address;
   this.latitude = geoData.results[0].geometry.location.lat;
   this.longitude = geoData.results[0].geometry.location.lng;
 }
 
+function getWeatherData(city) {
+  const geoData = require('./data/darksky.json');
+  console.log(geoData);
+  let weatherArr = [];
+  geoData.daily.data.forEach(day => {
+    let weatherObj = new Weather(day);
+    weatherArr.push(weatherObj);
+  });
+  return weatherArr;
+}
+
+function Weather(day) {
+  this.forecast = day.summary;
+  this.time = new Date(day.time);
+}
 
 
 
@@ -44,6 +59,25 @@ app.get('/location', (request, response) => {
     response.status(500).send('server error');
   }
 });
+
+
+//weather route
+app.get('/weather', (request, response) => {
+
+  try{
+    const city = request.query.data;
+    const weatherData = getWeatherData(city);
+    console.log(weatherData);
+    response.send(weatherData);
+  }
+  catch(error){
+    console.error(error);
+    response.status(500).send('server error');
+  }
+})
+
+
+
 
 //error route
 app.get('*', (request, response) => {

@@ -33,6 +33,28 @@ Estimate of time needed to complete: 30 minutes
 
 Start time: 9:15
 
-Finish time: _____
+Finish time: 9:45
 
-Actual time needed to complete: _____
+Actual time needed to complete: 30 minutes
+
+
+Number and name of feature: Location Queries
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 9:50
+
+Finish time: 10:54
+
+Actual time needed to complete: 1 hour 4 minutes
+
+
+Number and name of feature: Weather
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 11:20
+
+Finish time: 
+
+Actual time needed to complete: 
