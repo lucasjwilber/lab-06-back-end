@@ -5,24 +5,26 @@
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+This app aims to use several API calls to return location data for an inputted location. It uses Google geocode, yelp, themoviedb, eventbrite, and darksky APIs.
 
 ## Getting Started
 To build this app:
 1. set up a repo containing a server.js file, a .env file, a data folder containing the necessary JSON, and a .gitignore file.
 2. Initialize npm then install dotenv and express.
 3. Set up the server.js file so that it requires express and dotenv, and uses the .env file to hide the PORT value.
+4. Create routes that use constructor functions to parse the data and return what you're looking for from the API.
+5. Use try/catch to handle errors and return error messages.
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+This app uses Google geocode, yelp, themoviedb, eventbrite, and darksky APIs. It uses jQuery on the front end and express on the back end. It also uses dotenv and cors.
 
 ## Change Log
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
 
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource.
+10-22-2019: Created initial files and set up the back end. Currently uses a static data file for testing.
 
 ## Credits and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+Credit to Code Fellows for creating the front end.
 -->
 
 
@@ -62,10 +64,10 @@ Actual time needed to complete: 25 minutes
 
 Number and name of feature: Errors
 
-Estimate of time needed to complete: 1 hour
+Estimate of time needed to complete: 20 minutes
 
 Start time: 11:20
 
-Finish time: 
+Finish time: 11:40
 
-Actual time needed to complete: 
+Actual time needed to complete: 20 minutes
