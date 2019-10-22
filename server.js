@@ -4,7 +4,7 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 app.use(cors());
@@ -43,7 +43,7 @@ function Weather(day) {
 }
 
 function Error(code) {
-  this.status = code;
+  this.code = code;
   if (code === 500) {
     this.responseText = 'Something went wrong on our end, sorry';
   } else if (code === 400) {
@@ -69,7 +69,7 @@ app.get('/location', (request, response) => {
   catch(error){
     console.error(error);
     let status = new Error(500);
-    response.status(status.code).send(status.responseText);
+    response.status(status.code).send(status);
   }
 });
 
@@ -86,9 +86,9 @@ app.get('/weather', (request, response) => {
   catch(error){
     console.error(error);
     let status = new Error(500);
-    response.status(status.code).send(status.responseText);
+    response.status(status.code).send(status);
   }
-})
+});
 
 
 
@@ -96,7 +96,7 @@ app.get('/weather', (request, response) => {
 //error route
 app.get('*', (request, response) => {
   let status = new Error(400);
-  response.status(status.code).send(status.responseText);
+  response.status(status.code).send(status);
 });
 
 //default route
