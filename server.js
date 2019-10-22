@@ -12,6 +12,10 @@ app.get('/location', (request, response) => {
   response.send('route /location is working');
 });
 
+app.get('', (request, response) => {
+  response.send('server is up, this is the default route');
+});
+
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });
