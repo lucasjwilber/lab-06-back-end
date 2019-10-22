@@ -53,6 +53,17 @@ Number and name of feature: Weather
 
 Estimate of time needed to complete: 1 hour
 
+Start time: 11
+
+Finish time: 11:25
+
+Actual time needed to complete: 25 minutes
+
+
+Number and name of feature: Errors
+
+Estimate of time needed to complete: 1 hour
+
 Start time: 11:20
 
 Finish time: 

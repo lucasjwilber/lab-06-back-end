@@ -42,6 +42,18 @@ function Weather(day) {
   this.time = new Date(day.time);
 }
 
+function Error(code) {
+  this.status = code;
+  if (code === 500) {
+    this.responseText = 'Something went wrong on our end, sorry';
+  } else if (code === 400) {
+    this.responseText = 'Page not found';
+  } else if (code === 200) {
+    this.responseText = 'Success';
+  } else {
+    this.responseText = 'Invalid Status Code';
+  }
+}
 
 
 
@@ -56,7 +68,8 @@ app.get('/location', (request, response) => {
   }
   catch(error){
     console.error(error);
-    response.status(500).send('server error');
+    let status = new Error(500);
+    response.status(status.code).send(status.responseText);
   }
 });
 
@@ -72,7 +85,8 @@ app.get('/weather', (request, response) => {
   }
   catch(error){
     console.error(error);
-    response.status(500).send('server error');
+    let status = new Error(500);
+    response.status(status.code).send(status.responseText);
   }
 })
 
@@ -81,7 +95,8 @@ app.get('/weather', (request, response) => {
 
 //error route
 app.get('*', (request, response) => {
-  response.status(404).send('not found');
+  let status = new Error(400);
+  response.status(status.code).send(status.responseText);
 });
 
 //default route
