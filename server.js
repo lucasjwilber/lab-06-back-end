@@ -39,7 +39,7 @@ function getWeatherData(city) {
 
 function Weather(day) {
   this.forecast = day.summary;
-  this.time = new Date(day.time);
+  this.time = new Date(day.time).toDateString();
 }
 
 function Error(code) {
